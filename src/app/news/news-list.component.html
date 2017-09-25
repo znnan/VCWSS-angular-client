@@ -1,0 +1,44 @@
+<div class="container">
+    <ol class="breadcrumb">
+        <li><a routerLink="/index" class="fa fa-home"></a></li>
+        <li><a class="active">新闻</a></li>
+    </ol>
+</div>
+<div id="main-wrapper">
+    <div class="container content-wrapper">
+        <div class="row">
+            <div class="col-md-9" role="main">
+                <ul id="news-list">
+                    <li *ngFor="let news of newsList | async" (click)="gotoDetail(news)">
+                        <div class="article">
+                            <h3 class="article-title"><a href="">{{news.title}}</a></h3>
+                            <div class="index-author-comments-date">
+                                <span class="author-name">{{news.author}}</span>&nbsp;&nbsp;<a class="archive">{{news.type}}</a>&nbsp;&nbsp; {{news.releaseTime}}
+                            </div>
+                            <div class="article-image">
+                                <a><img src=""></a>
+                            </div>
+                            <p>{{news.subtitle}}</p>
+                            <a class="btn btn-custom btn-readmore">阅读更多</a>
+                        </div>
+                    </li>
+                </ul>
+                <nav aria-label="Page navigation example">
+                  <ul class="pagination">
+                    <li class="page-item previous"><a href="#">&larr; Newer</a></li>
+                    <li class="page-item next"><a href="#">Older &rarr;</a></li>
+                  </ul>
+                </nav>
+            </div>
+            <div class="col-md-3" role="complementary">
+                <nav class="hidden-print hidden-xs hidden-sm affix sidebar" data-spy="affix" data-offset-top="32">
+                    <ul class="nav nav-stacked" >
+                        <li class><a id="news-vcwss" href="">学联新闻</a></li>
+                        <li class><a id="news-stuttgart" href="">斯图新闻</a></li>
+                        <li class><a id="news-de" href="">全德新闻</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
