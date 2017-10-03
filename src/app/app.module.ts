@@ -1,7 +1,7 @@
-import { BrowserModule }                from '@angular/platform-browser';
 import { NgModule }                     from '@angular/core';
+import { BrowserModule }                from '@angular/platform-browser';
 import { FormsModule }                  from '@angular/forms';
-import { HttpModule }                   from '@angular/http';
+import { HttpClientModule }             from '@angular/common/http';
 import { BrowserAnimationsModule }      from '@angular/platform-browser/animations';
 
 import { NgbModule }                    from '@ng-bootstrap/ng-bootstrap';
@@ -9,48 +9,40 @@ import { Angular2FontawesomeModule }    from 'angular2-fontawesome/angular2-font
 
 import { AppComponent }                 from './app.component';
 import { AppRoutingModule }             from './app-routing.module';
-import { HeaderComponent }              from './navigation-bar/header.component';
-import { IndexComponent }               from './index.component';
 
+import { HeaderComponent }              from './navigation-bar/header.component';
+import { IndexModule }               from './index/index.module';
 import { NewsModule }                   from './news/news.module';
+import { LoginRoutingModule }           from './login-routing.module';
+import { LoginComponent }               from './login.component';
 
 import { PageNotFoundComponent}         from './not-found.component'
-/*
-import { CarouselComponent }      from './carousel.component';
-import { SlideComponent }         from './slide.component';
-import { AdComponent }            from './ad.component';
-import { GallerySlideComponent }  from './gallery-slide.component';
-import { FooterComponent }        from './footer.component';
 
-import { ArticleComponent }       from './article.component';
-import { ArticleDetailComponent } from './article-detail.component';
-*/
+import { DialogService }                from './dialog.service';
+import { MockDbService }                from './mock-data';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 
 @NgModule({
   declarations: [
     AppComponent,
     PageNotFoundComponent,
     HeaderComponent,
-    IndexComponent,
-    //HeaderComponent,
-    //CarouselComponent,
-    //SlideComponent,
-    //AdComponent,
-    //GallerySlideComponent,
-    //FooterComponent
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule,
-    Angular2FontawesomeModule,
-    NgbModule.forRoot(),
     FormsModule,
-    HttpModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(MockDbService),
+    BrowserAnimationsModule,
+    NgbModule.forRoot(),
+    Angular2FontawesomeModule,
+    IndexModule,
     NewsModule,
+    LoginRoutingModule,
     AppRoutingModule,
-    HttpModule,
   ],
-  providers: [],
+  providers: [DialogService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

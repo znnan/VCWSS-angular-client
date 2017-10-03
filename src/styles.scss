@@ -15,14 +15,7 @@ $theme-color: #f05050;
 	}
 }
 
-.btn-custom{
-	background-color: #f05050;
-    border-color: #f05050;
-}
-.btn-custom:hover,.btn-custom:focus{
-    background-color: #ee3939;
-    border-color: #ed2a2a;
-}
+
 .form-control:focus {
 	border-color: #f05050;
 }
@@ -125,47 +118,7 @@ hr {
 address {
 	margin-bottom: 0px;
 }
-.btn {
-    font-size: 14px;
-    font-family: 'Source Sans Pro', sans-serif;
-    text-transform: uppercase;
-    border-radius: 0;
-}
-.btn:focus,.btn:active {
-    outline: none;
-    color: #ffffff;
-}
-.btn-custom{
-	border-radius: 3px;
-	padding: 0.8em 1.8em;
-	color: #fff;
-	font-weight: 700;
-	-webkit-transition: all .5s ease-out;
-	-moz-transition: all .5s ease-out;
-	transition: all .5s ease-out;
-	text-transform: uppercase;
-}
-.btn-custom:hover,.btn-custom:focus{
-    color: #fff;
-}
-.btn-custom-outline {
-	border-radius: 3px;
-	padding: 0.8em 1.8em;
-	color: #fff;
-	font-weight: 700;
-	-webkit-transition: all .5s ease-out;
-	transition: all .5s ease-out;
-	text-transform: uppercase;
-	background-color: transparent;
-	border-color: #ffffff;
-}
-.btn-custom-outline:hover,.btn-custom-outline:focus{
-	color: #ffffff;
-	background-color: rgba(255,255,255,.5);
-}
-.btn-bar a{
-	margin-right: 10px;
-}
+
 .form-control {
 	box-shadow: none;
 	-webkit-box-shadow: none;
@@ -428,93 +381,7 @@ section {
 
 /* 6 Home
 ----------------------------------------------------------------------------- */
-.carousel-section {
-    background: url("./assets/img-1.jpg");
-    overflow: hidden;
-    padding: 180px 0px;
-}
-.carousel-razon .carousel-caption {
-    position: static;
-    text-align: center;
-}
-.carousel-razon .carousel-indicators {
-    bottom: -130px !important;
-}
-.carousel-razon .carousel-indicators li {
-    margin: 0 2px;
-}
-.carousel-indicators li{
-    -webkit-border-radius: 20px;
-	-moz-border-radius: 20px;
-	border-radius: 20px;
-	height: 12px;
-	width: 12px;
-	background: transparent;
-}
-.carousel-indicators .active {
-	background: #fff;
-}
-.carousel-text h1{
-	font-family: 'Roboto Slab', serif;
-}
-.carousel-text span{
-    text-transform: uppercase;
-}
-.carousel-text p{
-    color: #D2CFCF;
-    font-size: 16px;
-}
-.carousel-caption {
-	margin-bottom: -80%;
-}
-.carousel-control:hover {
-	background-color: #FFF;
-	opacity: 0.1;
-}
-.carousel-inner>.item {
-	width: 100%;
-	margin: 0 auto;
-	height: 700px !important;
-	padding-bottom: 60%;
-	overflow:hidden;
-}
-.carousel-inner img {
-	width: 100%;
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	-webkit-transform: translateY(-50%) translateX(-50%);
-	-ms-transform: translateY(-50%) translateX(-50%);
-	-moz-transform: translateY(-50%) translateX(-50%);
-	transfrom: translateY(-50%) translateX(-50%);
-}
-@media only screen and (max-width: 1280px) {
-	.carousel-inner>.item {
-		width:100%;
-		padding-bottom:60%;
-		height:0;
-	}
-	.carousel-text{
-		position: relative;
-		margin-bottom: -15%;
-		width: 100%;
-	}
-}
-@media only screen and (max-width: 767px) {
-	.carousel-text{
-		position: relative;
-		margin-bottom: 30%;
-	}
-	.carousel-text h1{
-		font-size:30px;
-	}
-	.carousel-text span{
-		font-size: 25px;
-	}
-	.carousel-text p{
-		display: none;
-	}
-}
+
 
 /* 9 Portfolio
 ----------------------------------------------------------------------------- */

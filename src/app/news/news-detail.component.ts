@@ -1,21 +1,16 @@
-import { Component, OnInit, HostBinding } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { slideInDownAnimation } from '../animations';
 
 import { NewsService }                      from './news.service';
 import 'rxjs/add/operator/switchMap';
 import { News }                             from './news';
 
 @Component({
-    selector: 'news-detail',
     templateUrl: './news-detail.component.html',
     styleUrls: ['./news-detail.component.scss'],
 })
 
 export class NewsDetailComponent implements OnInit {
-    @HostBinding('@routeAnimation') routeAnimation = true;
-    @HostBinding('style.display')   display = 'block';
-    @HostBinding('style.position')  position = 'absolute';
 
     news: News;
 

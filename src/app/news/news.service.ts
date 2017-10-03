@@ -1,18 +1,19 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import { News }             from './news';
 
+type Data = { data: any }
 
 @Injectable()
 export class NewsService {
     private newsUrl = 'api/newsList';
 
-    constructor(private http: Http) { }
+    constructor(private http: HttpClient) { }
 
-    getNewsList(): Observable<News[]>{
-        return this.http.get(this.newsUrl).map(response => response.json().data as News[]);
+    getNewsList(): Observable<any[]>{
+        return this.http.get<Data>(this.newsUrl).map(response => response.data as any[]);
     }
 
     private handleError(error: any): Promise<any> {
@@ -20,8 +21,8 @@ export class NewsService {
         return Promise.reject(error.message || error);
     }
 
-    getNews(id: number): Observable<News>{
+    getNews(id: number): Observable<any>{
         const url = `${this.newsUrl}/${id}`;
-        return this.http.get(url).map(response => response.json().data);
+        return this.http.get<Data>(url).map(response => response.data as any);
     }
 }

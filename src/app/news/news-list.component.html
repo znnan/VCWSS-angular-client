@@ -9,17 +9,17 @@
         <div class="row">
             <div class="col-md-9" role="main">
                 <ul id="news-list">
-                    <li *ngFor="let news of newsList | async" (click)="gotoDetail(news)">
+                    <li *ngFor="let news of newsList | async">
                         <div class="article">
-                            <h3 class="article-title"><a href="">{{news.title}}</a></h3>
+                            <h3 class="article-title"><a [routerLink]="[news.id]">{{news.title}}</a></h3>
                             <div class="index-author-comments-date">
-                                <span class="author-name">{{news.author}}</span>&nbsp;&nbsp;<a class="archive">{{news.type}}</a>&nbsp;&nbsp; {{news.releaseTime}}
+                                <span class="author-name">{{news.author}}</span>&nbsp;&nbsp;<a class="archive"></a>&nbsp;&nbsp; {{news.releaseTime}}
                             </div>
                             <div class="article-image">
-                                <a><img src=""></a>
+                                <a><img src="{{news.img}}"></a>
                             </div>
-                            <p>{{news.subtitle}}</p>
-                            <a class="btn btn-custom btn-readmore">阅读更多</a>
+                            <p>{{news.description}}</p>
+                            <a [class.selected]="isSelected(news)" (click)="gotoArticle(news)" class="btn btn-custom btn-readmore">阅读更多</a>
                         </div>
                     </li>
                 </ul>
