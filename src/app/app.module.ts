@@ -11,8 +11,9 @@ import { AppComponent }                 from './app.component';
 import { AppRoutingModule }             from './app-routing.module';
 
 import { HeaderComponent }              from './navigation-bar/header.component';
-import { IndexModule }               from './index/index.module';
+import { IndexModule }                  from './index/index.module';
 import { NewsModule }                   from './news/news.module';
+import { ContactModule }                from './contact/contact.module';
 import { LoginRoutingModule }           from './login-routing.module';
 import { LoginComponent }               from './login.component';
 
@@ -39,6 +40,7 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
     Angular2FontawesomeModule,
     IndexModule,
     NewsModule,
+    ContactModule,
     LoginRoutingModule,
     AppRoutingModule,
   ],

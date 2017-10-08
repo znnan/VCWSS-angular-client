@@ -16,8 +16,8 @@
     <div class="row event-block-list">
         <ul id="newsList">
             <li *ngFor="let news of newsList" class="col-md-3 col-sm-6 col-xs-12 event-block">
-                <a href="#"><img src="{{news.img}}"></a>
-                <p class="title-block"><a href="#">{{news.title}}</a></p>
+                <a [routerLink]="['/news',news.id]"><img src="{{news.img}}"></a>
+                <p class="title-block"><a [routerLink]="['/news',news.id]">{{news.title}}</a></p>
                 <span class="col-md-12 col-sm-12 col-xs-12 time-block-news">{{news.update}}</span>
             </li>
         </ul>

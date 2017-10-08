@@ -3,8 +3,7 @@ import { Router, ActivatedRoute, ParamMap}  from '@angular/router';
 import 'rxjs/add/operator/switchMap';
 import { Observable }                       from 'rxjs/Observable';
 
-import { NewsService }                      from './news.service';
-import { News }                             from './news';
+import { NewsService, News }                from './news.service';
 
 @Component({
     templateUrl: './news-list.component.html',
@@ -12,7 +11,7 @@ import { News }                             from './news';
 })
 
 export class NewsListComponent implements OnInit {
-    newsList: Observable<any[]>;
+    newsList: News;
     private newsId: number;
     
     constructor(
@@ -22,11 +21,22 @@ export class NewsListComponent implements OnInit {
     ){}
 
     ngOnInit():void {
-        this.newsList = this.route.paramMap
+        
+        this.service.getNewsList().subscribe(response => {
+            this.newsList =response;
+        })
+        /*
+        this.route.paramMap.switchMap(params: ParamMap)=>{
+            this.newsId = +params.get('id');
+        }
+        */
+        
+        this.route.paramMap
         .switchMap((params: ParamMap) => {
             this.newsId = +params.get('id');
             return this.service.getNewsList();
         });
+        
     }
 
     isSelected(news: News){

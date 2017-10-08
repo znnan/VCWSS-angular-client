@@ -3,9 +3,9 @@ import { Router, ActivatedRoute, ParamMap}  from '@angular/router';
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/toPromise';
 import { Observable }                       from 'rxjs/Observable';
-import { HttpClient }                   from '@angular/common/http';
 
-import { IndexService, NewsList, EventList }                     from './index.service';
+import { IndexService, EventList }                     from './index.service';
+import { NewsService, News }                           from '../news/news.service';
 
 
 @Component({
@@ -14,25 +14,21 @@ import { IndexService, NewsList, EventList }                     from './index.s
   styleUrls: [ './article-list.component.scss' ]
 })
 export class ArticleListComponent implements OnInit {
-    newsList: NewsList;
+    newsList: News;
     eventList: EventList;
 
     constructor(
         private indexService:   IndexService,
-        private route:          ActivatedRoute,
-        private router:         Router,
-        private http:           HttpClient
+        private newsService:    NewsService,
     ){}
 
     ngOnInit():void{
-        this.indexService.getNewsList().subscribe(response =>{
+        this.newsService.getNewsList().subscribe(response =>{
             this.newsList = response;
         })
-
         this.indexService.getEventList().subscribe(response =>{
             this.eventList = response;
         })
     }
 
-    
 }

@@ -9,7 +9,7 @@
         <div class="row">
             <div class="col-md-9" role="main">
                 <ul id="news-list">
-                    <li *ngFor="let news of newsList | async">
+                    <li *ngFor="let news of newsList">
                         <div class="article">
                             <h3 class="article-title"><a [routerLink]="[news.id]">{{news.title}}</a></h3>
                             <div class="index-author-comments-date">

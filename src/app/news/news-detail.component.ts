@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
-import { NewsService }                      from './news.service';
+import { slideInDownAnimation } from '../animations';
+
+import { NewsService, News }                      from './news.service';
 import 'rxjs/add/operator/switchMap';
-import { News }                             from './news';
 
 @Component({
     templateUrl: './news-detail.component.html',
@@ -11,7 +12,6 @@ import { News }                             from './news';
 })
 
 export class NewsDetailComponent implements OnInit {
-
     news: News;
 
     constructor(
@@ -24,7 +24,10 @@ export class NewsDetailComponent implements OnInit {
         this.route.paramMap
           .switchMap((params: ParamMap) =>
             this.service.getNews(+params.get('id')))
-          .subscribe((news: News) => this.news = news);
+          .subscribe(response => {
+              this.news = response;
+              console.log(this.news);
+            });
     }
 
     gotoNews(){

@@ -31,14 +31,13 @@
                                 </div>
                                 <div class="article-main">
                                     <div class="article-image">
-                                        <a href="#">
+                                        <a href="{{news.img}}">
                                             <img src={{news.img}}>
                                         </a>
-                                        <p>source: </p>
-                                        <p>source: </p>
+                                        <p>Caption: {{news.imgCaption}}</p>
+                                        <p>source: {{news.imgSrc}}</p>
                                     </div>
-                                    <div class="article-content">
-                                        <p>{{news.description}}</p>
+                                    <div [innerHTML]="news.content" class="article-content">
                                     </div>
                                 </div>
                             </div>
