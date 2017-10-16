@@ -1,0 +1,25 @@
+<div class="container">
+    <h5 class="page-header">Events<small style="padding-left:20px; color:#f05050"><a routerLink="/news">mehr</a></small></h5>
+    <div class="row event-block-list">
+        <ul id="eventsList">
+            <li *ngFor="let event of eventList" class="col-md-3 col-sm-6 col-xs-12 event-block">
+                <a href="#"><img src="{{event.img}}"></a>
+                <p class="title-block"><a href="#">{{event.title}}</a></p>
+                <span class="col-md-12 col-sm-12 col-xs-12 time-block">{{event.eventTime}}</span>
+                <span class="col-md-12 col-sm-12 col-xs-12 location-block">{{event.eventAddress}}</span>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="container">
+    <h5 class="page-header">Nachrichten<small style="padding-left:20px; color:#f05050"><a routerLink="/news">mehr</a></small></h5>
+    <div class="row event-block-list">
+        <ul id="newsList">
+            <li *ngFor="let news of newsList" class="col-md-3 col-sm-6 col-xs-12 event-block">
+                <a [routerLink]="['/news',news.id]"><img src="{{news.img}}"></a>
+                <p class="title-block"><a [routerLink]="['/news',news.id]">{{news.title}}</a></p>
+                <span class="col-md-12 col-sm-12 col-xs-12 time-block-news">{{news.update}}</span>
+            </li>
+        </ul>
+    </div>
+</div>

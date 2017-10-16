@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="zh-CN" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="navIndex" datatype="html">
+        <source>首页</source>
+        <target>Home</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/navigation-bar/header.component.ts</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="navEvent" datatype="html">
+        <source>活动</source>
+        <target>Events</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/navigation-bar/header.component.ts</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="navNews" datatype="html">
+        <source>新闻</source>
+        <target>Nachrichten</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/navigation-bar/header.component.ts</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
