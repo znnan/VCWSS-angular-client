@@ -1,42 +1,43 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # compiled output
-/dist
-/tmp
-/out-tsc
+/vcwss-angular/dist
+/vcwss-angular/tmp
+/vcwss-angular/out-tsc
 
 # dependencies
-/node_modules
+/vcwss-angular/node_modules
+/express-server/node-modules
 
 # IDEs and editors
-/.idea
-.project
-.classpath
-.c9/
-*.launch
-.settings/
-*.sublime-workspace
+/vcwss-angular/.idea
+/vcwss-angular/.project
+/vcwss-angular/.classpath
+/vcwss-angular/.c9/
+/vcwss-angular/*.launch
+/vcwss-angular/.settings/
+/vcwss-angular/*.sublime-workspace
 
 # IDE - VSCode
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
+/vcwss-angular/.vscode/*
+/vcwss-angular/!.vscode/settings.json
+/vcwss-angular/!.vscode/tasks.json
+/vcwss-angular/!.vscode/launch.json
+/vcwss-angular/!.vscode/extensions.json
 
 # misc
-/.sass-cache
-/connect.lock
-/coverage
-/libpeerconnection.log
-npm-debug.log
-testem.log
-/typings
+/vcwss-angular/.sass-cache
+/vcwss-angular/connect.lock
+/vcwss-angular/coverage
+/vcwss-angular/libpeerconnection.log
+/vcwss-angular/npm-debug.log
+/vcwss-angular/testem.log
+/vcwss-angular/typings
 
 # e2e
-/e2e/*.js
-/e2e/*.map
+/vcwss-angular/e2e/*.js
+/vcwss-angular/e2e/*.map
 
 # System Files
-.DS_Store
-Thumbs.db
+/vcwss-angular/.DS_Store
+/vcwss-angular/Thumbs.db
